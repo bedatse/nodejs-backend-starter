@@ -1,8 +1,6 @@
-import test from "ava";
-
 import { filterEvenNumber } from "@app";
 
-test("Filter function can filter even number", (t) => {
-  t.true(filterEvenNumber(2));
-  t.false(filterEvenNumber(1));
+test("Filter function can filter even number", () => {
+  expect(filterEvenNumber(2)).toBeTruthy();
+  expect(filterEvenNumber(1)).toBeFalsy();
 });
