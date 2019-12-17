@@ -1,0 +1,68 @@
+{
+  "name": "nodejs-backend-starter",
+  "description": "Yet another NodeJS Starter Project",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "ava",
+    "coverage": "nyc ava",
+    "start": "ts-node src/app.ts",
+    "watch": "nodemon --exec ts-node src/app.ts",
+    "watch:test": "ava --watch"
+  },
+  "dependencies": {
+    "rxjs": "^6.5.3",
+    "ts-node": "^8.5.4",
+    "tsconfig-paths": "^3.9.0",
+    "typescript": "^3.7.3"
+  },
+  "devDependencies": {
+    "ava": "^2.4.0",
+    "nodemon": "^2.0.2",
+    "nyc": "^14.1.1",
+    "sonarqube-scanner": "^2.5.0",
+    "tslint": "^5.20.1",
+    "tslint-sonarts": "^1.9.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bedatse/nodejs-backend-starter.git"
+  },
+  "author": "Beda Tse <bedatse@coeus.hk>",
+  "license": "Unlicense",
+  "bugs": {
+    "url": "https://github.com/bedatse/nodejs-backend-starter/issues"
+  },
+  "homepage": "https://github.com/bedatse/nodejs-backend-starter#readme",
+  "ava": {
+    "compileEnhancements": false,
+    "extensions": [
+      "ts"
+    ],
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ]
+  },
+  "nyc": {
+    "extension": [
+      ".ts"
+    ],
+    "include": [
+      "src/**/*.ts"
+    ],
+    "exclude": [
+      "src/**/*.spec.ts"
+    ],
+    "reporter": [
+      "text",
+      "html"
+    ],
+    "require": [
+      "ts-node/register",
+      "tsconfig-paths/register"
+    ],
+    "cache": true,
+    "sourceMap": true,
+    "instrument": true
+  }
+}
